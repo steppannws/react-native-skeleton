@@ -5,6 +5,8 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "react-native run-android",
+    "lint-staged": "lint-staged",
+    "lint-staged-files": "eslint",
     "test": "jest"
   },
   "dependencies": {
@@ -17,10 +19,27 @@
     "@babel/runtime": "^7.4.4",
     "babel-jest": "^24.8.0",
     "jest": "^24.8.0",
+    "lint-staged": "^8.1.6",
     "metro-react-native-babel-preset": "^0.54.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.17.0",
     "react-test-renderer": "16.8.3"
   },
+  "lint-staged": {
+    "app/**/*.js": [
+      "prettier --write --print-width 100 --tab-width 2 --single-quote --trailing-comma es5 --parser babylon",
+      "lint-staged-files"
+    ]
+  },
+  "pre-commit": [
+    "lint-staged"
+  ],
   "jest": {
     "preset": "react-native"
+  },
+  "rnpm": {
+    "assets": [
+      "./src/static/fonts"
+    ]
   }
 }
