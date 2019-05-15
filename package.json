@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "react-native run-android",
+    "ios": "react-native run-ios",
     "lint-staged": "lint-staged",
     "lint-staged-files": "eslint",
     "test": "jest"
@@ -18,12 +19,24 @@
     "@babel/core": "^7.4.4",
     "@babel/runtime": "^7.4.4",
     "babel-jest": "^24.8.0",
+    "detox": "^12.7.0",
     "jest": "^24.8.0",
     "lint-staged": "^8.1.6",
     "metro-react-native-babel-preset": "^0.54.0",
     "pre-commit": "^1.2.2",
     "prettier": "^1.17.0",
     "react-test-renderer": "16.8.3"
+  },
+  "detox": {
+    "configurations": {
+      "ios.sim.debug": {
+        "binaryPath": "ios/build/Build/Products/Debug-iphonesimulator/RNSskeleton.app",
+        "build": "xcodebuild -project ios/RNSskeleton.xcodeproj -scheme RNSskeleton -configuration Debug -sdk iphonesimulator -derivedDataPath ios/build",
+        "type": "ios.simulator",
+        "name": "iPhone 10"
+      }
+    },
+    "test-runner": "jest"
   },
   "lint-staged": {
     "app/**/*.js": [
