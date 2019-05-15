@@ -9,7 +9,9 @@
     "page-with-redux": "seng-generator generate page-with-redux",
     "page": "seng-generator generate page",
     "component": "seng-generator generate component",
-    "stateless": "seng-generator generate stateless-component $component_name",
+    "stateless": "seng-generator generate stateless-component",
+    "scaffold": "node ./bin/scaffold-pages.js && yarn prettier",
+    "prettier": "prettier --write --print-width 100 --tab-width 2 --single-quote --trailing-comma es5 --parser babel \"src/**/*.js\"",
     "lint-staged": "lint-staged",
     "lint-staged-files": "eslint",
     "test": "jest"
@@ -23,13 +25,24 @@
     "@babel/core": "^7.4.4",
     "@babel/runtime": "^7.4.4",
     "babel-jest": "^24.8.0",
+    "babel-eslint": "^10.0.1",
     "detox": "^12.7.0",
     "jest": "^24.8.0",
-    "lint-staged": "^8.1.6",
+    "lint-staged": "3.4.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "16.1.0",
+    "eslint-config-prettier": "2.9.0",
+    "eslint-plugin-babel": "5.0.0",
+    "eslint-plugin-import": "2.11.0",
+    "eslint-plugin-jsx-a11y": "6.0.3",
+    "eslint-plugin-react": "7.7.0",
+    "eslint-plugin-react-native": "3.2.1",
     "metro-react-native-babel-preset": "^0.54.0",
     "pre-commit": "^1.2.2",
     "prettier": "^1.17.0",
-    "react-test-renderer": "16.8.3"
+    "react-test-renderer": "16.8.3",
+    "to-constant-case": "^1.0.0",
+    "to-pascal-case": "^1.0.0"
   },
   "detox": {
     "configurations": {
@@ -43,8 +56,8 @@
     "test-runner": "jest"
   },
   "lint-staged": {
-    "app/**/*.js": [
-      "prettier --write --print-width 100 --tab-width 2 --single-quote --trailing-comma es5 --parser babylon",
+    "src/**/*.js": [
+      "prettier --write --print-width 100 --tab-width 2 --single-quote --trailing-comma es5 --parser babel",
       "lint-staged-files"
     ]
   },
