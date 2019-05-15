@@ -6,6 +6,10 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "android": "react-native run-android",
     "ios": "react-native run-ios",
+    "page-with-redux": "seng-generator generate page-with-redux",
+    "page": "seng-generator generate page",
+    "component": "seng-generator generate component",
+    "stateless": "seng-generator generate stateless-component $component_name",
     "lint-staged": "lint-staged",
     "lint-staged-files": "eslint",
     "test": "jest"
