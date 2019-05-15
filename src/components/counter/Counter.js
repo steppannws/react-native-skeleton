@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text } from 'react-native';
 
-export const Counter = ({ initialValue, incrementBy }) => {
+export default ({ initialValue, incrementBy }) => {
   const [index, incrementIncrement] = useState(initialValue);
 
   return (
