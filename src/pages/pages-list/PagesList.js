@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-// import PropTypes from 'prop-types';
-import { View, ScrollView, Text, Button } from 'react-native';
+import PropTypes from 'prop-types';
+import { View, ScrollView, Button } from 'react-native';
 import { Navigation } from 'react-native-navigation';
 import routes from '../../navigation/routes';
 import { main } from './style';
@@ -28,7 +28,9 @@ export default class PagesList extends PureComponent {
   /**
    * Definition of the prop types
    */
-  static propTypes = {};
+  static propTypes = {
+    componentId: PropTypes.string.isRequired,
+  };
 
   /**
    * Default Props

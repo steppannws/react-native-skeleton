@@ -1,0 +1,15 @@
+export default {
+  ICONS: 'icons',
+  ROBOT_REGULAR: 'Roboto-Regular',
+  ROBOT_BLACK: 'Roboto-Black',
+  ROBOT_BLACKITALIC: 'Roboto-BlackItalic',
+  ROBOT_BOLD: 'Roboto-Bold',
+  ROBOT_BOLDITALIC: 'Roboto-BoldItalic',
+  ROBOT_ITALIC: 'Roboto-Italic',
+  ROBOT_LIGHT: 'Roboto-Light',
+  ROBOT_LIGHTITALIC: 'Roboto-LightItalic',
+  ROBOT_MEDIUM: 'Roboto-Medium',
+  ROBOT_MEDIUMITALIC: 'Roboto-MediumItalic',
+  ROBOT_THIN: 'Roboto-Thin',
+  ROBOT_THINITALIC: 'Roboto-ThinItalic',
+};
