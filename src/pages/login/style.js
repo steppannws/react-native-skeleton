@@ -3,6 +3,24 @@ import { StyleSheet } from 'react-native';
 export const main = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 20,
+  },
+  titleWrapper: {
+    alignItems: 'center',
+    marginVertical: 100,
+  },
+  titleText: {
+    fontSize: 26,
+  },
+  formWrapper: {
+    flex: 1,
+  },
+  fieldWrapper: { margin: 10 },
+  textInput: {
+    fontSize: 20,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    marginVertical: 10,
+    paddingVertical: 10,
   },
 });
 

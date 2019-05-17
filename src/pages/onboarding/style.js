@@ -1,10 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-export const main = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
+export const main = StyleSheet.create({});
 
 /*
  Some common Styling Cheat Sheet:

@@ -1,9 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 export const main = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
+  container: { flex: 1, margin: 20, alignItems: 'center' },
 });
 
 /*
