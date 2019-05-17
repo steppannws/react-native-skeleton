@@ -4,16 +4,23 @@
  * @flow
  */
 
-import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import PagesList from './pages/pages-list';
+import React, { PureComponent } from 'react';
+import { Text, View, StyleSheet } from 'react-native';
+import { mainNavigation, loginNavigation } from './navigation/navigator';
 
-export default class App extends Component {
+export default class App extends PureComponent {
+  componentDidMount() {
+    const isLoggedIn = false;
+
+    setTimeout(() => {
+      isLoggedIn ? mainNavigation() : loginNavigation();
+    }, 1000);
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <PagesList />
+        <Text>LOADING</Text>
       </View>
     );
   }
@@ -24,14 +31,5 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    marginBottom: 5,
   },
 });
