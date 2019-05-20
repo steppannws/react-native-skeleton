@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Platform } from 'react-native';
 
 export const main = StyleSheet.create({
   container: {
@@ -13,6 +13,17 @@ export const main = StyleSheet.create({
     fontSize: 26,
   },
   formWrapper: {
+    flex: 1,
+    ...Platform.select({
+      ios: {
+        marginTop: 50,
+      },
+      android: {
+        marginTop: 40,
+      },
+    }),
+  },
+  fildsWrapper: {
     flex: 1,
   },
   fieldWrapper: { margin: 10 },
