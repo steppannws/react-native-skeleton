@@ -1,9 +1,10 @@
 import { StyleSheet, Platform } from 'react-native';
-import { fonts } from '../../theme';
+import { fonts, colors } from '../../theme';
 
 export const main = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.WHITE,
     padding: 20,
   },
   titleWrapper: {
