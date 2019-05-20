@@ -9,12 +9,9 @@ import { Text, View, StyleSheet } from 'react-native';
 import { mainNavigation, loginNavigation } from './navigation/navigator';
 
 export default class App extends PureComponent {
-  componentDidMount() {
+  componentWillMount() {
     const isLoggedIn = false;
-
-    setTimeout(() => {
-      isLoggedIn ? mainNavigation() : loginNavigation();
-    }, 1000);
+    isLoggedIn ? mainNavigation() : loginNavigation();
   }
 
   render() {

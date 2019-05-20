@@ -1,6 +1,7 @@
 import { Navigation } from 'react-native-navigation';
 import routes from './routes';
 import Pages from '../enum/Pages';
+import { images } from '../theme';
 
 const createPages = () => {
   // Register pages
@@ -16,6 +17,12 @@ const mainNavigation = () => {
     root: {
       bottomTabs: {
         id: 'BottomTabsId',
+        options: {
+          bottomTabs: {
+            elevation: 8,
+            titleDisplayMode: 'alwaysShow', // for Android only
+          },
+        },
         children: [
           {
             stack: {
@@ -25,9 +32,11 @@ const mainNavigation = () => {
                     name: Pages.HOME,
                     options: {
                       bottomTab: {
-                        fontSize: 12,
                         text: 'Home',
-                        //   icon: require('./signin.png')
+                        fontSize: 12,
+                        selectedFontSize: 12,
+                        icon: images.TRIANGLE_ICON,
+                        scale: 2,
                       },
                     },
                   },
@@ -45,7 +54,9 @@ const mainNavigation = () => {
                       bottomTab: {
                         text: 'Pages',
                         fontSize: 12,
-                        //   icon: require('./signup.png')
+                        selectedFontSize: 12,
+                        icon: images.SQUARE_ICON,
+                        scale: 2.5,
                       },
                     },
                   },
