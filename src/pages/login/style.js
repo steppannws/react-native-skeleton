@@ -9,7 +9,7 @@ export const main = StyleSheet.create({
   },
   titleWrapper: {
     alignItems: 'center',
-    marginVertical: 100,
+    marginVertical: 50,
   },
   titleText: {
     fontSize: 26,

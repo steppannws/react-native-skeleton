@@ -19,6 +19,7 @@ export default class Login extends PureComponent {
     return {
       topBar: {
         visible: false,
+        drawBehind: true,
       },
     };
   }
