@@ -9,6 +9,8 @@ import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
 
+import com.masteratul.exceptionhandler.ReactNativeExceptionHandlerPackage;
+
 import com.reactnativenavigation.NavigationApplication;
 import com.reactnativenavigation.react.NavigationReactNativeHost;
 import com.reactnativenavigation.react.ReactGateway;
@@ -38,7 +40,8 @@ public class MainApplication extends NavigationApplication {
     // Add additional packages you require here
     // No need to add RnnPackage and MainReactPackage
     return Arrays.<ReactPackage>asList(
-      new LottiePackage()
+      new LottiePackage(),
+      new ReactNativeExceptionHandlerPackage()
     );
   }
 
