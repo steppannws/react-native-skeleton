@@ -1,4 +1,5 @@
 import { StyleSheet, Platform } from 'react-native';
+import { fonts } from '../../theme';
 
 export const main = StyleSheet.create({
   container: {
@@ -11,6 +12,7 @@ export const main = StyleSheet.create({
   },
   titleText: {
     fontSize: 26,
+    fontFamily: fonts.ROBOT_LIGHTITALIC,
   },
   formWrapper: {
     flex: 1,
