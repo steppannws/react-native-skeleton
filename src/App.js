@@ -10,7 +10,7 @@ import { mainNavigation, loginNavigation } from './navigation/navigator';
 
 export default class App extends PureComponent {
   componentWillMount() {
-    const isLoggedIn = false;
+    const isLoggedIn = true;
     isLoggedIn ? mainNavigation() : loginNavigation();
   }
 
