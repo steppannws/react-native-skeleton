@@ -1,7 +1,11 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../theme';
 
 export const main = StyleSheet.create({
-  container: { flex: 1, margin: 20, alignItems: 'center' },
+  container: { flex: 1, alignItems: 'center', backgroundColor: colors.WHITE },
+  lottieWrapper: {
+    flex: 1,
+  },
 });
 
 /*
