@@ -36,6 +36,7 @@
 		1F93BE412293005400110C4E /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F93BDF32292FF2800110C4E /* Roboto-Regular.ttf */; };
 		1F93BE422293005400110C4E /* Roboto-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F93BDEC2292FF2700110C4E /* Roboto-Thin.ttf */; };
 		1F93BE432293005400110C4E /* Roboto-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F93BDF12292FF2800110C4E /* Roboto-ThinItalic.ttf */; };
+		1F93BEE5229338ED00110C4E /* libReactNativeExceptionHandler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F93BEE2229338DC00110C4E /* libReactNativeExceptionHandler.a */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		2D02E4BD1E0B4A84006451C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
@@ -161,6 +162,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 7B49FEBB1E95090800DEB3EA;
 			remoteInfo = ReactNativeNavigationTests;
+		};
+		1F93BEE1229338DC00110C4E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F93BEB8229338DC00110C4E /* ReactNativeExceptionHandler.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = ReactNativeExceptionHandler;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -379,6 +387,7 @@
 		1F93BDF32292FF2800110C4E /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-Regular.ttf"; path = "../../src/static/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		1F93BDF42292FF2800110C4E /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-MediumItalic.ttf"; path = "../../src/static/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		1F93BDF52292FF2800110C4E /* Roboto-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Roboto-BoldItalic.ttf"; path = "../../src/static/fonts/Roboto-BoldItalic.ttf"; sourceTree = "<group>"; };
+		1F93BEB8229338DC00110C4E /* ReactNativeExceptionHandler.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeExceptionHandler.xcodeproj; path = "../node_modules/react-native-exception-handler/ios/ReactNativeExceptionHandler.xcodeproj"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* RNSskeleton-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "RNSskeleton-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* RNSskeleton-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "RNSskeleton-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -406,6 +415,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F93BEE5229338ED00110C4E /* libReactNativeExceptionHandler.a in Frameworks */,
 				1F4BFC9F2280CE77000DEF71 /* libReactNativeNavigation.a in Frameworks */,
 				ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
@@ -595,6 +605,14 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		1F93BEB9229338DC00110C4E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F93BEE2229338DC00110C4E /* libReactNativeExceptionHandler.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -621,7 +639,6 @@
 				960C3EC2AF1F48127F4EE04A /* Pods-RNSskeleton.debug.xcconfig */,
 				AF49D31BB1D96C3148710D61 /* Pods-RNSskeleton.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -637,6 +654,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1F93BEB8229338DC00110C4E /* ReactNativeExceptionHandler.xcodeproj */,
 				1F4BFC692280CE53000DEF71 /* ReactNativeNavigation.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -861,6 +879,10 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
+					ProductGroup = 1F93BEB9229338DC00110C4E /* Products */;
+					ProjectRef = 1F93BEB8229338DC00110C4E /* ReactNativeExceptionHandler.xcodeproj */;
+				},
+				{
 					ProductGroup = 1F4BFC6A2280CE53000DEF71 /* Products */;
 					ProjectRef = 1F4BFC692280CE53000DEF71 /* ReactNativeNavigation.xcodeproj */;
 				},
@@ -972,6 +994,13 @@
 			fileType = wrapper.cfbundle;
 			path = ReactNativeNavigationTests.xctest;
 			remoteRef = 1F4BFC9D2280CE53000DEF71 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		1F93BEE2229338DC00110C4E /* libReactNativeExceptionHandler.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libReactNativeExceptionHandler.a;
+			remoteRef = 1F93BEE1229338DC00110C4E /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */ = {
