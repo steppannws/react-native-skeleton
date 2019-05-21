@@ -14,7 +14,11 @@ export default class Home extends PureComponent {
   /**
    * Navigator styles
    */
-  static navigatorStyle = {};
+  static options() {
+    return {
+      topBar: {},
+    };
+  }
 
   /**
    * Definition of the prop types
