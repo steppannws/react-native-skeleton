@@ -15,7 +15,9 @@ const createPages = () => {
 };
 
 const navigationComnponent = (component, options = {}) => {
-  return typeof component === 'string' ? { component: { name: component, options } } : component;
+  return typeof component === 'string'
+    ? { component: { id: component, name: component, options } }
+    : component;
 };
 
 const mainNavigation = () => {

@@ -1,18 +1,33 @@
-import { StyleSheet, Dimensions } from 'react-native';
-import { colors } from '../../theme';
+import { StyleSheet } from 'react-native';
+import { colors, fonts } from '../../theme';
 
 export const main = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     backgroundColor: colors.WHITE,
+    paddingHorizontal: 10,
   },
-  logoImage: {
-    resizeMode: 'contain',
-    // height: 100,
-    width: Dimensions.get('window').width,
-    height: 200,
-    // marginTop: 20,
+  flatList: {},
+  itemWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  thumbWrapper: {
+    flex: -1,
+    width: 60,
+    height: 40,
+    marginRight: 8,
+    marginTop: 8,
+  },
+  thumbImage: {
+    width: 60,
+    height: 40,
+    resizeMode: 'cover',
+  },
+  titleText: {
+    marginLeft: 20,
+    fontFamily: fonts.ROBOT_BOLD,
+    fontSize: 22,
   },
 });
 

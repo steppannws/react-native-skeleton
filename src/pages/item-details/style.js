@@ -4,15 +4,14 @@ import { colors } from '../../theme';
 export const main = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     backgroundColor: colors.WHITE,
   },
-  logoImage: {
-    resizeMode: 'contain',
-    // height: 100,
+  image: {
+    resizeMode: 'cover',
     width: Dimensions.get('window').width,
-    height: 200,
-    // marginTop: 20,
+  },
+  description: {
+    margin: 20,
   },
 });
 

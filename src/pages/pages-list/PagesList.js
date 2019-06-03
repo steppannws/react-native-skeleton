@@ -19,9 +19,7 @@ export default class PagesList extends PureComponent {
 
   static options() {
     return {
-      topBar: {
-        visible: true,
-      },
+      topBar: {},
     };
   }
 
@@ -46,11 +44,9 @@ export default class PagesList extends PureComponent {
     Navigation.push(
       this.props.componentId,
       navigationComnponent(pageId, {
-        options: {
-          topBar: {
-            title: {
-              text: 'test',
-            },
+        topBar: {
+          title: {
+            text: pageId,
           },
         },
       })
