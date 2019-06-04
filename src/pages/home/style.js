@@ -2,9 +2,15 @@ import { StyleSheet } from 'react-native';
 import { colors } from '../../theme';
 
 export const main = StyleSheet.create({
-  container: { flex: 1, alignItems: 'center', backgroundColor: colors.WHITE },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    backgroundColor: colors.WHITE,
+  },
+
   lottieWrapper: {
     flex: 1,
+    width: '100%',
   },
 });
 

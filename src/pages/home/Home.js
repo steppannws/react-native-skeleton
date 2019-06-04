@@ -1,9 +1,12 @@
 import React, { PureComponent } from 'react';
 // import PropTypes from 'prop-types';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import { Navigation } from 'react-native-navigation';
+import I18n from 'i18n-js';
 import LottieView from 'lottie-react-native';
 import { main } from './style';
+import { translate } from '../../utils/Translator';
+import TranslationEnum from '../../enum/TranslationEnum';
 
 /**
  * Description
@@ -51,18 +54,29 @@ export default class Home extends PureComponent {
     if (this.lottieAnimation) this.lottieAnimation.reset();
   }
 
+  handleChangeLocale = () => {
+    I18n.currentLocale() === 'en' ? (I18n.locale = 'es') : (I18n.locale = 'en');
+
+    // update
+    this.forceUpdate();
+  };
+
   render() {
     return (
       <View style={main.container}>
-        <LottieView
-          ref={ref => {
-            this.lottieAnimation = ref;
-          }}
-          style={main.lottieWrapper}
-          source={require('../../static/lottie/gift-box.json')}
-          autoPlay
-          loop={false}
-        />
+        <Text>{I18n.currentLocale()}</Text>
+        <Text>{translate(TranslationEnum.GREETINGS_COPY, { name: 'John' })}</Text>
+        <Text onPress={this.handleChangeLocale}>Change locale</Text>
+        <View style={main.lottieWrapper}>
+          <LottieView
+            ref={ref => {
+              this.lottieAnimation = ref;
+            }}
+            source={require('../../static/lottie/gift-box.json')}
+            autoPlay
+            loop={false}
+          />
+        </View>
       </View>
     );
   }

@@ -6,6 +6,7 @@ import { Navigation, Alert } from 'react-native-navigation';
 import { setJSExceptionHandler, setNativeExceptionHandler } from 'react-native-exception-handler';
 import { createPages } from './src/navigation/navigator';
 import App from './src/App';
+import { initLocaleWithDefaultLanguage } from './src/utils/Translator';
 
 /**
  * Exceptions handler
@@ -33,6 +34,9 @@ setNativeExceptionHandler(errorString => {
 }, false);
 
 /**/
+
+// Configure locale
+initLocaleWithDefaultLanguage('en');
 
 /**
  * Register app component
