@@ -57,7 +57,7 @@ export default class Home extends PureComponent {
   handleChangeLocale = () => {
     I18n.currentLocale() === 'en' ? (I18n.locale = 'es') : (I18n.locale = 'en');
 
-    // update
+    // forse update to re-render
     this.forceUpdate();
   };
 
