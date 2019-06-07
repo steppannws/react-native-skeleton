@@ -19,4 +19,4 @@ React Native Skeleton for incoming projects
 - integrations/seng-generator
 - integrations/detox
 - feature/localization
-- feature/hooks-example - 
+- feature/hooks-example
