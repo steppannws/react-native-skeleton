@@ -5,7 +5,7 @@ import { Navigation } from 'react-native-navigation';
 import I18n from 'i18n-js';
 import LottieView from 'lottie-react-native';
 import { main } from './style';
-import { translate } from '../../utils/Translator';
+import { translate, changeLocale } from '../../utils/Translator';
 import TranslationEnum from '../../enum/TranslationEnum';
 
 /**
@@ -55,7 +55,7 @@ export default class Home extends PureComponent {
   }
 
   handleChangeLocale = () => {
-    I18n.currentLocale() === 'en' ? (I18n.locale = 'es') : (I18n.locale = 'en');
+    I18n.currentLocale() === 'en' ? changeLocale('es') : changeLocale('en');
 
     // update
     this.forceUpdate();
@@ -66,7 +66,9 @@ export default class Home extends PureComponent {
       <View style={main.container}>
         <Text>{I18n.currentLocale()}</Text>
         <Text>{translate(TranslationEnum.GREETINGS_COPY, { name: 'John' })}</Text>
-        <Text onPress={this.handleChangeLocale}>Change locale</Text>
+        <Text onPress={this.handleChangeLocale}>
+          {translate(TranslationEnum.CHANGE_LANGUAGE_COPY)}
+        </Text>
         <View style={main.lottieWrapper}>
           <LottieView
             ref={ref => {
