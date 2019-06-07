@@ -1,3 +1,4 @@
 {
-    "GREETINGS_COPY": "Hello {name}!"
+    "GREETINGS_COPY": "Hello {name}!",
+    "CHANGE_LANGUAGE_COPY": "Change language"
 }

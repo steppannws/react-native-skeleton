@@ -18,16 +18,19 @@ const translations = {
 
 I18n.translations = translations;
 
-formatMessage.setup({
-  locale: I18n.locale,
-  translations,
-});
-
-const getFormatedMessage = (id, options = {}) => {
+const formatMessageSetup = () => {
   formatMessage.setup({
     locale: I18n.locale,
     translations: I18n.translations,
   });
+};
+
+const changeLocale = (locale = 'en') => {
+  I18n.locale = locale;
+  formatMessageSetup();
+};
+
+const getFormatedMessage = (id, options = {}) => {
   return formatMessage(id, options);
 };
 
@@ -37,4 +40,6 @@ const translate = (id, options = {}) => {
     : '__COPY_ID_NOT_FOUND__';
 };
 
-export { initLocaleWithDefaultLanguage, translate };
+formatMessageSetup();
+
+export { initLocaleWithDefaultLanguage, changeLocale, translate };
