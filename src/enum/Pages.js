@@ -5,4 +5,5 @@ export default {
   LOGIN: 'Login',
   ONBOARDING: 'Onboarding',
   PAGES_LIST: 'PagesList',
+  CODEPUSH_TEST: 'CodePushTest'
 };
