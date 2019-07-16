@@ -18,11 +18,18 @@ import com.reactnativenavigation.react.ReactGateway;
 import java.util.Arrays;
 import java.util.List;
 
+import com.microsoft.codepush.react.CodePush;
+
 public class MainApplication extends NavigationApplication {
 
   @Override
   protected ReactGateway createReactGateway() {
     ReactNativeHost host = new NavigationReactNativeHost(this, isDebug(), createAdditionalReactPackages()) {
+      @Override
+      protected String getJSBundleFile() {
+        return CodePush.getJSBundleFile();
+      }
+
       @Override
       protected String getJSMainModuleName() {
         return "index";
@@ -41,7 +48,9 @@ public class MainApplication extends NavigationApplication {
     // No need to add RnnPackage and MainReactPackage
     return Arrays.<ReactPackage>asList(
       new LottiePackage(),
-      new ReactNativeExceptionHandlerPackage()
+      new ReactNativeExceptionHandlerPackage(),
+      new MainReactPackage(),
+      new CodePush("CodePush Key here", MainApplication.this, BuildConfig.DEBUG)
     );
   }
 
