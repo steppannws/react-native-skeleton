@@ -57,6 +57,8 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
+		F3700EDE22DE2AE100D6DA27 /* libCodePush.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F3700EAE22DE2ABC00D6DA27 /* libCodePush.a */; };
+		F3700EE022DE2AFE00D6DA27 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F3700EDF22DE2AFE00D6DA27 /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -389,6 +391,20 @@
 			remoteGlobalIDString = 358F4ED71D1E81A9004DF814;
 			remoteInfo = RCTBlob;
 		};
+		F3700EAD22DE2ABC00D6DA27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3700EA822DE2ABC00D6DA27 /* CodePush.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = CodePush;
+		};
+		F3700EAF22DE2ABC00D6DA27 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F3700EA822DE2ABC00D6DA27 /* CodePush.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F886647B1F4ADB500036D01B;
+			remoteInfo = "CodePush-tvOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -439,6 +455,8 @@
 		D3F48ED71961E8A01B879D5C /* libPods-RNSskeleton.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNSskeleton.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
+		F3700EA822DE2ABC00D6DA27 /* CodePush.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CodePush.xcodeproj; path = "../node_modules/react-native-code-push/ios/CodePush.xcodeproj"; sourceTree = "<group>"; };
+		F3700EDF22DE2AFE00D6DA27 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -454,6 +472,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3700EE022DE2AFE00D6DA27 /* libz.tbd in Frameworks */,
+				F3700EDE22DE2AE100D6DA27 /* libCodePush.a in Frameworks */,
 				1F067CB422944FBA004B3C63 /* libReactNativeExceptionHandler.a in Frameworks */,
 				1F93BEA922932D4C00110C4E /* libLottie.a in Frameworks */,
 				1F93BEAA22932D4C00110C4E /* libLottieReactNative.a in Frameworks */,
@@ -676,6 +696,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3700EDF22DE2AFE00D6DA27 /* libz.tbd */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
 				2D16E6891FA4F8E400B85C8A /* libReact.a */,
@@ -714,6 +735,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				F3700EA822DE2ABC00D6DA27 /* CodePush.xcodeproj */,
 				1F067C8222944FAA004B3C63 /* ReactNativeExceptionHandler.xcodeproj */,
 				1F93BEA322932D4100110C4E /* LottieReactNative.xcodeproj */,
 				1F93BE6B22932D0600110C4E /* Lottie.xcodeproj */,
@@ -775,6 +797,15 @@
 			children = (
 				ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */,
 				2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F3700EA922DE2ABC00D6DA27 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F3700EAE22DE2ABC00D6DA27 /* libCodePush.a */,
+				F3700EB022DE2ABC00D6DA27 /* libCodePush.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -892,6 +923,10 @@
 			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = F3700EA922DE2ABC00D6DA27 /* Products */;
+					ProjectRef = F3700EA822DE2ABC00D6DA27 /* CodePush.xcodeproj */;
+				},
 				{
 					ProductGroup = 1F93BE6C22932D0600110C4E /* Products */;
 					ProjectRef = 1F93BE6B22932D0600110C4E /* Lottie.xcodeproj */;
@@ -1281,6 +1316,20 @@
 			fileType = archive.ar;
 			path = libRCTBlob.a;
 			remoteRef = ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F3700EAE22DE2ABC00D6DA27 /* libCodePush.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCodePush.a;
+			remoteRef = F3700EAD22DE2ABC00D6DA27 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F3700EB022DE2ABC00D6DA27 /* libCodePush.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCodePush.a;
+			remoteRef = F3700EAF22DE2ABC00D6DA27 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
