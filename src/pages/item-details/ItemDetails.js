@@ -12,18 +12,12 @@ export default class ItemDetails extends PureComponent {
   /**
    * Navigator styles
    */
-  static options() {
-    return {
-      tobBar: {
-        visible: false,
-      },
-    };
-  }
 
   /**
    * Definition of the prop types
    */
   static propTypes = {
+    navigation: PropTypes.any.isRequired,
     description: PropTypes.string,
     image: PropTypes.any,
   };
@@ -46,7 +40,10 @@ export default class ItemDetails extends PureComponent {
   // }
 
   render() {
-    const { image, description } = this.props;
+    // const { image, description } = this.props;
+    const image = this.props.navigation.getParam('image', null);
+    const description = this.props.navigation.getParam('description', '');
+
     return (
       <View style={main.container}>
         <View style={main.imageWrapper}>

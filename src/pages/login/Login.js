@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
-// import PropTypes from 'prop-types';
-import { View, ScrollView, Text, TextInput, Button, Alert } from 'react-native';
+import PropTypes from 'prop-types';
+import { View, ScrollView, Text, TextInput, Button } from 'react-native';
 import { Formik } from 'formik';
 import { main } from './style';
-import { signInValidation } from '../../utils/forms/form-validations';
-import { mainNavigation } from '../../navigation/navigator';
+import Pages from '../../enum/Pages';
 
 /**
  * Description
@@ -15,19 +14,16 @@ export default class Login extends PureComponent {
   /**
    * Navigator styles
    */
-  static options() {
-    return {
-      topBar: {
-        visible: false,
-        drawBehind: true,
-      },
-    };
-  }
+  static navigationOptions = {
+    header: null,
+  };
 
   /**
    * Definition of the prop types
    */
-  static propTypes = {};
+  static propTypes = {
+    navigation: PropTypes.any.isRequired,
+  };
 
   /**
    * Default Props
@@ -52,15 +48,23 @@ export default class Login extends PureComponent {
                 username: '',
                 password: '',
               }}
-              validationSchema={signInValidation}
-              onSubmit={props => {
-                // Submit form logic here
-                if (props.username === 'monk' && props.password === 'monk') {
-                  mainNavigation();
-                  return;
+              // validationSchema={signInValidation}
+              onSubmit={
+                /* props */ () => {
+                  // Submit form logic here
+                  // if (props.username === 'monk' && props.password === 'monk') {
+                  //   mainNavigation();
+                  //   return;
+                  // }
+                  // const resetAction = StackActions.reset({
+                  //   index: 0,
+                  //   actions: [NavigationActions.navigate({ routeName: 'Home' })],
+                  // });
+                  // this.props.navigation.dispatch(resetAction);
+                  this.props.navigation.navigate(Pages.HOME);
+                  // Alert.alert('Error', 'Enter correct username and password');
                 }
-                Alert.alert('Error', 'Enter correct username and password');
-              }}
+              }
               render={({ values, handleChange, handleSubmit }) => {
                 return (
                   <View style={main.fildsWrapper}>

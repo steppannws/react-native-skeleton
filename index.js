@@ -2,11 +2,11 @@
  * @format
  */
 
-import { Navigation, Alert } from 'react-native-navigation';
+import { AppRegistry } from 'react-native';
 import { setJSExceptionHandler, setNativeExceptionHandler } from 'react-native-exception-handler';
-import { createPages } from './src/navigation/navigator';
-import App from './src/App';
 import { initLocaleWithDefaultLanguage } from './src/utils/Translator';
+import App from './App';
+import { name as appName } from './app.json';
 
 /**
  * Exceptions handler
@@ -16,11 +16,11 @@ const exceptionhandler = (error, isFatal) => {
   // TODO: Track JS exception
 
   if (isFatal) {
-    Alert.alert('JS exception', 'Fatal JS exception produced', [
-      {
-        text: 'Close',
-      },
-    ]);
+    // Alert.alert('JS exception', 'Fatal JS exception produced', [
+    //   {
+    //     text: 'Close',
+    //   },
+    // ]);
   }
 };
 
@@ -38,20 +38,4 @@ setNativeExceptionHandler(errorString => {
 // Configure locale
 initLocaleWithDefaultLanguage('en');
 
-/**
- * Register app component
- */
-
-Navigation.registerComponent('app', () => App);
-
-createPages();
-
-Navigation.events().registerAppLaunchedListener(() => {
-  Navigation.setRoot({
-    root: {
-      component: {
-        name: 'app',
-      },
-    },
-  });
-});
+AppRegistry.registerComponent(appName, () => App);

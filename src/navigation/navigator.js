@@ -1,133 +1,48 @@
-import { Navigation } from 'react-native-navigation';
-import { Dimensions } from 'react-native';
+import {
+  createAppContainer,
+  createSwitchNavigator,
+  createStackNavigator,
+  createBottomTabNavigator,
+  createDrawerNavigator,
+} from 'react-navigation';
 import routes from './routes';
 import Pages from '../enum/Pages';
-import { images } from '../theme';
-import BurgerButton from '../components/burger-button';
-import Drawer from '../components/drawer';
 
-const createPages = () => {
-  // Register pages
-  routes.forEach(route => Navigation.registerComponent(route.id, () => route.screen));
+const pageListNavigation = createStackNavigator({
+  [Pages.PAGES_LIST]: {
+    screen: routes[Pages.PAGES_LIST].screen,
+  },
+  [Pages.ITEMS_LIST]: {
+    screen: routes[Pages.ITEMS_LIST].screen,
+  },
+  [Pages.ITEM_DETAILS]: {
+    screen: routes[Pages.ITEM_DETAILS].screen,
+  },
+});
 
-  Navigation.registerComponent('burgerButton', () => BurgerButton);
-  Navigation.registerComponent('drawerScreen', () => Drawer);
-};
+const drawerNavigation = createDrawerNavigator({
+  [Pages.HOME]: { screen: routes[Pages.HOME].screen },
+  [Pages.ONBOARDING]: { screen: routes[Pages.ONBOARDING].screen },
+});
 
-const navigationComnponent = (component, options = {}) => {
-  return typeof component === 'string'
-    ? { component: { id: component, name: component, options } }
-    : component;
-};
+const mainNavigation = createBottomTabNavigator({
+  [Pages.HOME]: {
+    screen: drawerNavigation,
+  },
+  [Pages.PAGES_LIST]: {
+    screen: pageListNavigation,
+  },
+});
 
-const mainNavigation = () => {
-  return Navigation.setRoot({
-    root: {
-      sideMenu: {
-        center: {
-          bottomTabs: {
-            id: 'BottomTabsId',
-            options: {
-              bottomTabs: {
-                elevation: 8,
-                titleDisplayMode: 'alwaysShow', // for Android only
-              },
-            },
-            children: [
-              {
-                stack: {
-                  children: [
-                    {
-                      component: {
-                        id: Pages.HOME,
-                        name: Pages.HOME,
-                        options: {
-                          sideMenu: {
-                            right: {
-                              width: Dimensions.get('window').width * 0.6,
-                            },
-                          },
-                          topBar: {
-                            rightButtons: [
-                              {
-                                id: 'burgerButtonId',
-                                component: {
-                                  name: 'burgerButton',
-                                  passProps: {
-                                    onPress: () =>
-                                      Navigation.mergeOptions(Pages.HOME, {
-                                        sideMenu: {
-                                          right: { visible: true },
-                                        },
-                                      }),
-                                  },
-                                },
-                              },
-                            ],
-                          },
-                          bottomTab: {
-                            text: 'Home',
-                            fontSize: 12,
-                            selectedFontSize: 12,
-                            icon: images.TRIANGLE_ICON,
-                            scale: 2,
-                          },
-                        },
-                      },
-                    },
-                  ],
-                },
-              },
-              {
-                stack: {
-                  children: [
-                    {
-                      component: {
-                        id: Pages.PAGES_LIST,
-                        name: Pages.PAGES_LIST,
-                        options: {
-                          bottomTab: {
-                            text: 'Pages',
-                            fontSize: 12,
-                            selectedFontSize: 12,
-                            icon: images.SQUARE_ICON,
-                            scale: 2.5,
-                          },
-                        },
-                      },
-                    },
-                  ],
-                },
-              },
-            ],
-          },
-        },
-        right: {
-          width: 100,
-          component: {
-            name: 'drawerScreen',
-          },
-        },
-      },
-    },
-  });
-};
+const loginNavigation = createSwitchNavigator({
+  Login: {
+    screen: routes[Pages.LOGIN].screen,
+  },
+  Home: mainNavigation,
+});
 
-const loginNavigation = () => {
-  return Navigation.setRoot({
-    root: {
-      stack: {
-        children: [
-          {
-            component: {
-              name: Pages.LOGIN,
-              options: {},
-            },
-          },
-        ],
-      },
-    },
-  });
-};
+const StartNavigation = createAppContainer(mainNavigation);
 
-export { createPages, mainNavigation, loginNavigation, navigationComnponent };
+const LoginNavigation = createAppContainer(loginNavigation);
+
+export { StartNavigation, mainNavigation, LoginNavigation };

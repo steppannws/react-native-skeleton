@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 // import PropTypes from 'prop-types';
 import { View, Text } from 'react-native';
-import { Navigation } from 'react-native-navigation';
+// import { Navigation } from 'react-native-navigation';
 import I18n from 'i18n-js';
 import LottieView from 'lottie-react-native';
 import { main } from './style';
@@ -41,7 +41,7 @@ export default class Home extends PureComponent {
   constructor(props) {
     super(props);
 
-    Navigation.events().bindComponent(this);
+    // Navigation.events().bindComponent(this);
 
     this.lottieAnimation = null;
   }

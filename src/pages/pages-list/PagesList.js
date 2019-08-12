@@ -1,10 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import { View, ScrollView, Button } from 'react-native';
-import { Navigation } from 'react-native-navigation';
+import { StackActions } from 'react-navigation';
 import routes from '../../navigation/routes';
 import { main } from './style';
-import { navigationComnponent } from '../../navigation/navigator';
 
 /**
  * Description
@@ -15,19 +14,12 @@ export default class PagesList extends PureComponent {
   /**
    * Navigator styles
    */
-  static navigatorStyle = {};
-
-  static options() {
-    return {
-      topBar: {},
-    };
-  }
 
   /**
    * Definition of the prop types
    */
   static propTypes = {
-    componentId: PropTypes.string.isRequired,
+    navigation: PropTypes.any.isRequired,
   };
 
   /**
@@ -41,23 +33,18 @@ export default class PagesList extends PureComponent {
   static displayName = 'PagesList';
 
   handlePagesChange = pageId => {
-    Navigation.push(
-      this.props.componentId,
-      navigationComnponent(pageId, {
-        topBar: {
-          title: {
-            text: pageId,
-          },
-        },
-      })
-    );
+    const pushAction = StackActions.push({
+      routeName: pageId,
+    });
+
+    this.props.navigation.dispatch(pushAction);
   };
 
   render() {
     return (
       <View style={main.container}>
         <ScrollView>
-          {routes
+          {Object.values(routes)
             .filter(page => page.id !== PagesList.pageName)
             .map(page => (
               <Button

@@ -7,13 +7,13 @@ import Login from '../pages/login';
 import Onboarding from '../pages/onboarding';
 import PagesList from '../pages/pages-list';
 
-const routes = [
-  { id: Pages.HOME, screen: Home },
-  { id: Pages.ITEM_DETAILS, screen: ItemDetails },
-  { id: Pages.ITEMS_LIST, screen: ItemsList },
-  { id: Pages.LOGIN, screen: Login },
-  { id: Pages.ONBOARDING, screen: Onboarding },
-  { id: Pages.PAGES_LIST, screen: PagesList },
-];
+const routes = {
+  Home: { id: Pages.HOME, screen: Home },
+  ItemDetails: { id: Pages.ITEM_DETAILS, screen: ItemDetails },
+  ItemsList: { id: Pages.ITEMS_LIST, screen: ItemsList },
+  Login: { id: Pages.LOGIN, screen: Login },
+  Onboarding: { id: Pages.ONBOARDING, screen: Onboarding },
+  PagesList: { id: Pages.PAGES_LIST, screen: PagesList },
+};
 
 export default routes;

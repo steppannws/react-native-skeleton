@@ -1,7 +1,6 @@
 import React, { PureComponent } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { View, Image, Text, FlatList, TouchableOpacity } from 'react-native';
-import { Navigation } from 'react-native-navigation';
 import { main } from './style';
 import { images } from '../../theme';
 import Pages from '../../enum/Pages';
@@ -15,18 +14,13 @@ export default class ItemsList extends PureComponent {
   /**
    * Navigator styles
    */
-  static option() {
-    return {
-      topBar: {
-        //   visible: false,
-      },
-    };
-  }
 
   /**
    * Definition of the prop types
    */
-  static propTypes = {};
+  static propTypes = {
+    navigation: PropTypes.any.isRequired,
+  };
 
   /**
    * Default Props
@@ -67,24 +61,7 @@ export default class ItemsList extends PureComponent {
   }
 
   handleOpenItem = ({ id, image, title, description }) => {
-    Navigation.push(Pages.ITEMS_LIST, {
-      component: {
-        name: Pages.ITEM_DETAILS,
-        passProps: {
-          id,
-          image,
-          title,
-          description,
-        },
-        options: {
-          topBar: {
-            title: {
-              text: title,
-            },
-          },
-        },
-      },
-    });
+    this.props.navigation.push(Pages.ITEM_DETAILS, { id, image, title, description });
   };
 
   keyExtractor = item => item.id;
