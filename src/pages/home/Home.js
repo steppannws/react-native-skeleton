@@ -63,7 +63,7 @@ export default class Home extends PureComponent {
 
   render() {
     return (
-      <View style={main.container}>
+      <View style={main.container} pointerEvents="box-only">
         <Text>{I18n.currentLocale()}</Text>
         <Text>{translate(TranslationEnum.GREETINGS_COPY, { name: 'John' })}</Text>
         <Text onPress={this.handleChangeLocale}>

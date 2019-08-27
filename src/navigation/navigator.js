@@ -121,6 +121,7 @@ const loginNavigation = () => {
           {
             component: {
               name: Pages.LOGIN,
+              id: Pages.LOGIN,
               options: {},
             },
           },

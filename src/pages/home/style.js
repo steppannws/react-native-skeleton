@@ -5,7 +5,7 @@ export const main = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: colors.WHITE,
+    backgroundColor: colors.GREEN,
   },
 
   lottieWrapper: {
